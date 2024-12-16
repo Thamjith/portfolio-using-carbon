@@ -1,0 +1,22 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/colors' as *;
+
+.myself__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    height: 100%;
+    padding: $spacing-06;
+}
+
+.myself__title_wrapper{
+    display: flex;
+}
+
+.myself__title {
+    font-size: calc(21px + 4vw)
+}
+
+.red-text {
+    color: $red-50;
+}

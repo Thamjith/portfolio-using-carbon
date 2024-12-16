@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { GlobalTheme, Stack } from "@carbon/react";
+import { useEffect, useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import BodyContainer from "./components/BodyContainer/BodyContainer";
+import Experience from "./pages/Experience/Experience";
+import GetInTouch from "./pages/GetInTouch/GetInTouch";
+import Header from "./components/Header/Header"
+import Myself from "./pages/Myself/Myself";
 
+export type theme = "g10" | "g100" | "white" | "g90" | undefined;
+
+const App = () => {
+  const [theme, setTheme] = useState<theme>("g100");
+  useEffect(() => {
+    document.documentElement.dataset.carbonTheme = theme;
+  }, [theme]);
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <GlobalTheme theme={theme ?? "g100"}>
+      <Stack>
+        <Header setTheme={setTheme} />
+        <BodyContainer>
+          <Myself />
+          <Experience />
+          <GetInTouch />
+        </BodyContainer>
+      </Stack>
+    </GlobalTheme>
   )
 }
 
