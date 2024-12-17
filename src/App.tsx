@@ -7,6 +7,7 @@ import Experience from "./pages/Experience/Experience";
 import GetInTouch from "./pages/GetInTouch/GetInTouch";
 import Header from "./components/Header/Header"
 import Myself from "./pages/Myself/Myself";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export type theme = "g10" | "g100" | "white" | "g90" | undefined;
 
@@ -19,6 +20,7 @@ const App = () => {
     <GlobalTheme theme={theme ?? "g100"}>
       <Stack>
         <Analytics />
+        <SpeedInsights />
         <Header setTheme={setTheme} />
         <BodyContainer>
           <Myself />
