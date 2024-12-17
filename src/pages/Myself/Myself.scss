@@ -2,21 +2,59 @@
 @use '@carbon/colors' as *;
 
 .myself__container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: end;
     height: 100%;
     padding: $spacing-06;
 }
 
 .myself__title_wrapper{
     display: flex;
+    flex-wrap: wrap;
+    align-items: end;
 }
 
 .myself__title {
-    font-size: calc(21px + 4vw)
+    font-size: calc(21px + 3.5vw)
 }
 
 .red-text {
     color: $red-50;
 }
+
+.myself__profile_image_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myself__profile_image, .myself__profile_image__half {
+  object-fit: cover; 
+  max-width: 50vh; 
+}
+
+.myself__profile_image {
+    display: block;
+  }
+
+.myself__profile_image__half {
+    display: none;
+    width: 90%;
+  }
+
+  @media (max-width: 1055px) {
+    .myself__profile_image {
+      display: none; 
+    }
+  
+    .myself__profile_image__half {
+      display: block; 
+    }
+    .myself__profile_image_wrapper {
+        align-items:flex-start;
+    }
+  }
+
+  @media (max-width: 672px) {
+    .myself__profile_image_wrapper {
+        display: none;
+    }
+  }

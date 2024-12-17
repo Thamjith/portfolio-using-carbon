@@ -1,20 +1,40 @@
 import "./Myself.scss";
 
+import { Column, Grid } from "@carbon/react";
+
 const Myself = () => {
 
     return (
-        <div id="myself" className="myself__container">
-            <h1 className="myself__title">
-                <span>
-                    Hi,<br />
-                    My name is Thamjith Thaha. <br />
-                </span>
-                <span className="red-text">
-                    I'm software engineer with <br />
-                    {calculateExperience(startDate)} of experience.
-                </span>
-            </h1>
-        </div>
+        <Grid id="myself" className="myself__container">
+            <Column sm={100} md={4} lg={8} className="myself__title_wrapper">
+                <h1 className="myself__title">
+                    <span>
+                        Hi,<br />
+                        My name is Thamjith Thaha. <br />
+                    </span>
+                    <span className="red-text">
+                        I'm a software engineer with <br />
+                        {calculateExperience(startDate)} of experience.
+                    </span>
+                </h1>
+            </Column>
+            <Column sm={100} md={4} lg={8} className="myself__profile_image_wrapper">
+                <img
+                    src="/profilePictures/MyselfFull.jpg"
+                    alt="Thamjith sitting on a chair"
+                    loading="lazy"
+                    className="myself__profile_image"
+                    aria-label="Thamjith sitting on a chair"
+                />
+                <img
+                    src="/profilePictures/MyselfHalf.jpg"
+                    alt="Thamjith sitting on a chair"
+                    loading="lazy"
+                    className="myself__profile_image__half"
+                    aria-label="Thamjith sitting on a chair"
+                />
+            </Column>
+        </Grid>
     )
 }
 
