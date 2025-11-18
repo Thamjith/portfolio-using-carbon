@@ -20,7 +20,7 @@ const Myself = () => {
 			</Column>
 			<Column sm={100} md={4} lg={8} className='myself__profile_image_wrapper'>
 				<img
-					src='/profilePictures/MyselfFull.JPG'
+					src='/profilePictures/Myself.JPG'
 					loading='lazy'
 					className='myself__profile_image'
 				/>
